@@ -1,6 +1,6 @@
 # Insert ad-unit TinyMCE Plugin
 
-## For development
+## For test
 1. Edit src/main/ts/Plugin.ts
 2. Run
 ```
@@ -8,7 +8,7 @@ npm start
 ```
 3. Open src/demo/html/index.html in browser.
 
-## Usage
+# Usage
 1. Import
 ```
     import AdButton from 'tohen-media/tinymce-ad-button'
@@ -33,4 +33,15 @@ npm start
         toolbar: 'tinymce-ad-button',
         adsCodes: adsCodes,
     });
+```
+
+# Publish
+1. Add this line to .npmrc and replace TOKEN with github personal token
+```
+//npm.pkg.github.com/:_authToken=TOKEN
+```
+2. Login to npm and publish
+```
+npm login
+npm publish
 ```
