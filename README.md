@@ -1,7 +1,7 @@
 # Insert ad-unit TinyMCE Plugin
 
 ## For development
-1. Edit src/main/Plugin.ts
+1. Edit src/main/ts/Plugin.ts
 2. Run
 ```
 npm start

@@ -12,13 +12,19 @@ const setup = (editor: Editor, url: string): void => {
               type: 'panel', // The root body type - a Panel or TabPanel
               items: [ // A list of panel components
                 {
-                  type: 'htmlpanel', // A HTML panel component
-                  html: `<input 
+                    type: 'htmlpanel', // A HTML panel component
+                    html: `
+                        <select id="ad_unit_code_select">
+                            <option value="">none</option>
+                        </select>
+
+                        <input 
                             type="text" 
                             placeholder="ad-unit code"
                             id="ad_unit_code_input"
                             value=""
-                        />`
+                        />
+                    `
                 }
               ]
             },
@@ -36,6 +42,26 @@ const setup = (editor: Editor, url: string): void => {
               }
             ]
         });
+
+        // Inputs
+        let ad_unit_code_input = document.getElementById('ad_unit_code_input')
+        let ad_unit_code_select = document.getElementById('ad_unit_code_select')
+
+        // listen to select change
+        ad_unit_code_select.addEventListener('change', (e) => {
+            // Update text input with selected value
+            ad_unit_code_input.value = e.target.value
+        })
+
+        // Populate select input if adsCodes exist
+        if(typeof admin !== 'undefined' && typeof admin.adsCodes !== 'undefined'){
+            admin.adsCodes.forEach(adCode => {
+                let option = document.createElement("option");
+                option.text = adCode.name;
+                option.value = adCode.code;
+                ad_unit_code_select.add(option);
+            });
+        }
     }
   });
 };
