@@ -1,3 +1,9 @@
-# tinymceAdButton TinyMCE Plugin
+# Insert ad-unit TinyMCE Plugin
 
-Welcome stranger! This is a repo containing the tinymceAdButton TinyMCE plugin.
+## For development
+1. Edit src/main/Plugin.ts
+2. Run
+```
+npm start
+```
+3. Open src/demo/html/index.html in browser.
