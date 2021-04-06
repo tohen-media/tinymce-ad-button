@@ -7,3 +7,23 @@
 npm start
 ```
 3. Open src/demo/html/index.html in browser.
+
+## Usage
+1. Import
+```
+    import AdButton from 'tohen-media/tinymce-ad-button'
+```
+2. Follow https://medium.com/@abuoop123/how-to-add-plugin-to-tinymce-vue-f4d595d81a5f
+3. If you wish to populate the selectbox: Add adsCodes object to window.admin.
+```
+    window.admin.adsCodes = [
+        {
+            name: 'Nice',
+            code: 'super_nice'
+        },
+        {
+            name: 'Not bad',
+            code: 'not_bad'
+        },
+    ]
+```
