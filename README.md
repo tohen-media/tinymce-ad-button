@@ -11,28 +11,28 @@ npm start
 # Usage
 1. Import
 ```
-    import AdButton from 'tohen-media/tinymce-ad-button'
+    import tinymceAdButton from '@tohen-media/tinymce-ad-button/lib/main/ts/Plugin.js'
 ```
-2. Follow https://medium.com/@abuoop123/how-to-add-plugin-to-tinymce-vue-f4d595d81a5f
-3. If you wish to populate the selectbox: Add adsCodes object to tinymce init params.
+2. On init config object add:
 ```
-    const adsCodes = [
+{
+    ...
+    adsCodes: [
         {
-            name: 'Nice',
-            code: 'super_nice'
+            name: 'Super Ad',
+            code: 'super_ad'
         },
         {
-            name: 'Not bad',
-            code: 'not_bad'
+            name: 'Regular Ad',
+            code: 'regular_ad'
         },
-    ]
-
-    tinymce.init({
-        selector: 'textarea.tinymce',
-        plugins: 'code tinymce-ad-button',
-        toolbar: 'tinymce-ad-button',
-        adsCodes: adsCodes,
-    });
+    ],
+    setup: function() {
+        window.tinymce.PluginManager.add('tinymce-ad-button', tinymceAdButton)
+        tinymceAdButton()
+    },
+    ...
+}
 ```
 
 # Publish
