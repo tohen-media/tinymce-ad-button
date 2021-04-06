@@ -2,7 +2,7 @@ import { Editor, TinyMCE } from 'tinymce';
 
 declare const tinymce: TinyMCE;
 
-const setup = (editor: Editor, url: string): void => {
+const setup = (editor: Editor): void => {
   editor.ui.registry.addButton('tinymce-ad-button', {
     text: 'Insert ad',
     onAction: () => {
@@ -29,14 +29,14 @@ const setup = (editor: Editor, url: string): void => {
               ]
             },
             onSubmit() {
-                let ad_unit_code_input = document.getElementById('ad_unit_code_input')
+                const ad_unit_code_input = <HTMLInputElement>document.getElementById('ad_unit_code_input')
                 if(ad_unit_code_input.value){
                     editor.insertContent('{{'+ad_unit_code_input.value+'}}')
                     editor.windowManager.close()
                 }
             },
             onCancel() {
-                // editor.windowManager.close()
+                //
             },
             buttons: [ // A list of footer buttons
               {
@@ -51,19 +51,20 @@ const setup = (editor: Editor, url: string): void => {
         });
 
         // Inputs
-        let ad_unit_code_input = document.getElementById('ad_unit_code_input')
-        let ad_unit_code_select = document.getElementById('ad_unit_code_select')
+        const ad_unit_code_input = <HTMLInputElement>document.getElementById('ad_unit_code_input')
+        const ad_unit_code_select = <HTMLSelectElement>document.getElementById('ad_unit_code_select')
+        const ad_codes = editor.getParam('adsCodes')
 
         // listen to select change
-        ad_unit_code_select.addEventListener('change', (e) => {
+        ad_unit_code_select.addEventListener('change', () => {
             // Update text input with selected value
-            ad_unit_code_input.value = e.target.value
+            ad_unit_code_input.value = ad_unit_code_select.value
         })
 
         // Populate select input if adsCodes exist
-        if(typeof admin !== 'undefined' && typeof admin.adsCodes !== 'undefined'){
-            admin.adsCodes.forEach(adCode => {
-                let option = document.createElement("option");
+        if(ad_codes){
+            ad_codes.forEach(adCode => {
+                const option = document.createElement("option");
                 option.text = adCode.name;
                 option.value = adCode.code;
                 ad_unit_code_select.add(option);
