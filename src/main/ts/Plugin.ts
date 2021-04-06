@@ -35,11 +35,18 @@ const setup = (editor: Editor, url: string): void => {
                     editor.windowManager.close()
                 }
             },
+            onCancel() {
+                // editor.windowManager.close()
+            },
             buttons: [ // A list of footer buttons
               {
                 type: 'submit',
                 text: 'OK',
-              }
+              },
+              {
+                type: 'cancel',
+                text: 'Cancel',
+              },
             ]
         });
 
