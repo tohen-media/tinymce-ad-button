@@ -18,9 +18,18 @@ const adsCodes = [
     },
 ]
 
+const adSizes = [
+    100,
+    200,
+    300,
+    400,
+    500,
+]
+
 tinymce.init({
   selector: 'textarea.tinymce',
   plugins: 'code tinymce-ad-button',
   toolbar: 'tinymce-ad-button',
   adsCodes: adsCodes,
+  adSizes: adSizes,
 });
