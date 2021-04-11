@@ -3,7 +3,7 @@ import { Editor, TinyMCE } from 'tinymce';
 declare const tinymce: TinyMCE;
 
 const setup = (editor: Editor): void => {
-  editor.ui.registry.addButton('tinymce-ad-button', {
+  editor.ui.registry.addButton('tinymce-insert-ad', {
     text: 'Insert ad',
     onAction: () => {
         editor.windowManager.open({
@@ -115,5 +115,5 @@ const setup = (editor: Editor): void => {
 };
 
 export default (): void => {
-  tinymce.PluginManager.add('tinymce-ad-button', setup);
+  tinymce.PluginManager.add('tinymce-insert-ad', setup);
 };

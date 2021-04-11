@@ -1,7 +1,7 @@
 {
-  "name": "@tohen-media/tinymce-ad-button",
-  "version": "1.1.1",
-  "repository": "git://github.com/tohen-media/tinymce-ad-button.git",
+  "name": "tinymce-insert-ad",
+  "version": "1.1.0",
+  "repository": "git://github.com/tohen-media/tinymce-insert-ad.git",
   "description": "",
   "scripts": {
     "prepublishOnly": "yarn lint && yarn build",
@@ -12,7 +12,7 @@
     "start": "grunt webpack"
   },
   "keywords": [],
-  "author": "DodgeCode",
+  "author": "Generation4",
   "devDependencies": {
     "@ephox/agar": "latest",
     "@ephox/bedrock-server": "latest",

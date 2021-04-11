@@ -1,4 +1,4 @@
-# Insert ad-unit TinyMCE Plugin
+# TinyMCE plugin to insert ad-unit markup
 
 ## For test
 1. Edit src/main/ts/Plugin.ts
@@ -9,11 +9,15 @@ npm start
 3. Open src/demo/html/index.html in browser.
 
 # Usage
-1. Import
+1. Install
 ```
-    import tinymceAdButton from '@tohen-media/tinymce-ad-button/lib/main/ts/Plugin.js'
+    npm i tinymce-ad-button
 ```
-2. On init config object add:
+2. Import
+```
+    import tinymceAdButton from 'generation4/tinymce-insert-ad/lib/main/ts/Plugin.js'
+```
+3. On init config object add:
 ```
 {
     ...
@@ -27,8 +31,13 @@ npm start
             code: 'regular_ad'
         },
     ],
+    adSizes: [
+        200,
+        400,
+        600,
+    ],
     setup: function() {
-        window.tinymce.PluginManager.add('tinymce-ad-button', tinymceAdButton)
+        window.tinymce.PluginManager.add('tinymce-insert-ad', tinymceAdButton)
         tinymceAdButton()
     },
     ...
@@ -36,12 +45,7 @@ npm start
 ```
 
 # Publish
-1. Add this line to .npmrc and replace TOKEN with github personal token
-```
-//npm.pkg.github.com/:_authToken=TOKEN
-```
-2. Login to npm and publish
 ```
 npm login
-npm publish
+npm publish --access public
 ```
