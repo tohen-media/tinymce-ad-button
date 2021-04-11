@@ -79,11 +79,11 @@ module.exports = (grunt) => {
         },
         // scratchPluginMinPath is used twice on purpose, all outputs will be minified for premium plugins
         files: {
-          'dist/tinymce-ad-button/plugin.js': [
+          'dist/tinymce-insert-ad/plugin.js': [
             'src/text/license-header.js',
             scratchPluginMinPath
           ],
-          'dist/tinymce-ad-button/plugin.min.js': [
+          'dist/tinymce-insert-ad/plugin.min.js': [
             'src/text/license-header.js',
             scratchPluginMinPath
           ]
@@ -94,7 +94,7 @@ module.exports = (grunt) => {
     copy: {
       css: {
         files: [
-          { src: [ 'CHANGELOG.txt', 'LICENSE.txt' ], dest: 'dist/tinymce-ad-button', expand: true }
+          { src: [ 'CHANGELOG.txt', 'LICENSE.txt' ], dest: 'dist/tinymce-insert-ad', expand: true }
         ]
       }
     },
@@ -148,7 +148,7 @@ module.exports = (grunt) => {
   grunt.loadNpmTasks('@ephox/swag');
 
   grunt.registerTask('version', 'Creates a version file', () => {
-    grunt.file.write('dist/tinymce-ad-button/version.txt', BUILD_VERSION);
+    grunt.file.write('dist/tinymce-insert-ad/version.txt', BUILD_VERSION);
   });
 
   grunt.registerTask('default', [

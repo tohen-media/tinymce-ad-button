@@ -28,8 +28,8 @@ const adSizes = [
 
 tinymce.init({
   selector: 'textarea.tinymce',
-  plugins: 'code tinymce-ad-button',
-  toolbar: 'tinymce-ad-button',
+  plugins: 'code tinymce-insert-ad',
+  toolbar: 'tinymce-insert-ad',
   adsCodes: adsCodes,
   adSizes: adSizes,
 });

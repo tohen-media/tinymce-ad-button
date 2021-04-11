@@ -11,7 +11,7 @@ npm start
 # Usage
 1. Install
 ```
-    npm i tinymce-ad-button
+    npm i tinymce-insert-ad
 ```
 2. Import
 ```

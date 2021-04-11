@@ -5,5 +5,5 @@ Plugin();
 /** *****
  * DO NOT EXPORT ANYTHING
  *
- * IF YOU DO ROLLUP WILL LEAVE A `tinymce-ad-button` GLOBAL ON THE PAGE
+ * IF YOU DO ROLLUP WILL LEAVE A `tinymce-insert-ad` GLOBAL ON THE PAGE
  *******/
